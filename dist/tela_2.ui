@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>671</width>
+    <height>561</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>671</width>
+    <height>561</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>671</width>
+    <height>561</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(170, 170, 127);
+border-radius: 7px;
+border-style: outset;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>6</x>
+      <y>14</y>
+      <width>529</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>529</width>
+      <height>437</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>600</width>
+      <height>550</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Semibold</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string notr="true"/>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(152, 152, 152);
+border-radius: 20px;
+
+border-width: 1.3px; 
+border-radius: 5px;
+border-style: outset; 
+border-color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="autoScrollMargin">
+     <number>16</number>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>106</number>
+    </attribute>
+    <attribute name="horizontalHeaderHighlightSections">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="horizontalHeaderMinimumSectionSize">
+     <number>100</number>
+    </attribute>
+    <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+    <column>
+     <property name="text">
+      <string>Código</string>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial Black</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>imagens Projeto/conecte-se.png</normaloff>imagens Projeto/conecte-se.png</iconset>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>E-mail</string>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial Black</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>imagens Projeto/o-email.png</normaloff>imagens Projeto/o-email.png</iconset>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Nome</string>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial Black</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>imagens Projeto/nome.png</normaloff>imagens Projeto/nome.png</iconset>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Telefone</string>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial Black</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>imagens Projeto/telefone.png</normaloff>imagens Projeto/telefone.png</iconset>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Endereço</string>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial Black</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>imagens Projeto/endereco-residencial.png</normaloff>imagens Projeto/endereco-residencial.png</iconset>
+     </property>
+    </column>
+   </widget>
+   <widget class="QPushButton" name="bt_alterar">
+    <property name="geometry">
+     <rect>
+      <x>552</x>
+      <y>44</y>
+      <width>114</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>10</pointsize>
+      <weight>10</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: rgb(106, 106, 106);
+color: rgb(255, 255, 255);
+font: 87 10pt &quot;Arial Black&quot;;
+border-width: 4px; 
+border-radius: 10px;
+border-style: outset; 
+border-color: rgb(0, 0, 0);
+}
+
+QPushButton:pressed{
+background-color: rgb(106, 106, 106);
+color: rgb(255, 255, 255);
+font: 87 10pt &quot;Arial Black&quot;;
+border-width: 4px; 
+border-radius: 10px;
+border-style: outset; 
+border-color:rgb(255, 255, 255);
+
+
+
+}
+ </string>
+    </property>
+    <property name="text">
+     <string>Alterar</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>imagens Projeto/save 01.png</normaloff>imagens Projeto/save 01.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_apagar">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>110</y>
+      <width>115</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>10</pointsize>
+      <weight>10</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: rgb(106, 106, 106);
+color: rgb(255, 255, 255);
+font: 87 10pt &quot;Arial Black&quot;;
+border-width: 4px; 
+border-radius: 10px;
+border-style: outset; 
+border-color: rgb(0, 0, 0);
+}
+
+QPushButton:pressed{
+background-color: rgb(106, 106, 106);
+color: rgb(255, 255, 255);
+font: 87 10pt &quot;Arial Black&quot;;
+border-width: 4px; 
+border-radius: 10px;
+border-style: outset; 
+border-color:rgb(255, 255, 255);
+
+
+
+}
+ </string>
+    </property>
+    <property name="text">
+     <string>Apagar</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>imagens Projeto/lixeira  02.png</normaloff>imagens Projeto/lixeira  02.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
