@@ -2,36 +2,45 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>692</width>
-    <height>595</height>
+    <width>700</width>
+    <height>399</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
-    <width>692</width>
-    <height>595</height>
+    <width>700</width>
+    <height>399</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>692</width>
-    <height>595</height>
+    <width>700</width>
+    <height>399</height>
    </size>
   </property>
   <property name="sizeIncrement">
    <size>
-    <width>694</width>
-    <height>589</height>
+    <width>600</width>
+    <height>399</height>
    </size>
   </property>
   <property name="baseSize">
    <size>
-    <width>694</width>
-    <height>0</height>
+    <width>600</width>
+    <height>399</height>
    </size>
   </property>
   <property name="mouseTracking">
@@ -79,136 +88,6 @@ border-style: outset;</string>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="bt_buscar">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>30</y>
-       <width>115</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial Black</family>
-       <pointsize>12</pointsize>
-       <weight>10</weight>
-       <italic>false</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="mouseTracking">
-      <bool>false</bool>
-     </property>
-     <property name="toolTip">
-      <string notr="true"/>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{
-background-color: rgb(106, 106, 106);
-color: rgb(255, 255, 255);
-font: 87 12pt &quot;Arial Black&quot;;
-border-width: 4px; 
-border-radius: 10px;
-border-style: outset; 
-border-color: rgb(0, 0, 0);
-}
-
-QPushButton:pressed{
-background-color: rgb(106, 106, 106);
-color: rgb(255, 255, 255);
-font: 87 10pt &quot;Arial Black&quot;;
-border-width: 4px; 
-border-radius: 10px;
-border-style: outset; 
-border-color: rgb(255, 255, 255);
-
-
-
-}
- </string>
-     </property>
-     <property name="text">
-      <string>Buscar</string>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>imagens Projeto/lupa.png</normaloff>imagens Projeto/lupa.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>30</width>
-       <height>30</height>
-      </size>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="bt_novo">
-     <property name="geometry">
-      <rect>
-       <x>285</x>
-       <y>30</y>
-       <width>286</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial Black</family>
-       <pointsize>12</pointsize>
-       <weight>10</weight>
-       <italic>false</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="mouseTracking">
-      <bool>false</bool>
-     </property>
-     <property name="toolTip">
-      <string notr="true"/>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{
-background-color: rgb(106, 106, 106);
-color: rgb(255, 255, 255);
-font: 87 12pt &quot;Arial Black&quot;;
-border-width: 4px; 
-border-radius: 10px;
-border-style: outset; 
-border-color: rgb(0, 0, 0);
-}
-
-QPushButton:pressed{
-background-color: rgb(106, 106, 106);
-color: rgb(255, 255, 255);
-font: 87 10pt &quot;Arial Black&quot;;
-border-width: 4px; 
-border-radius: 10px;
-border-style: outset; 
-border-color: rgb(255, 255, 255);
-
-
-
-}
- 
-</string>
-     </property>
-     <property name="text">
-      <string>Adicionar novo Cliente </string>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>imagens Projeto/novo 01.png</normaloff>imagens Projeto/novo 01.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>30</width>
-       <height>30</height>
-      </size>
-     </property>
-    </widget>
     <widget class="QLabel" name="lb_codigo">
      <property name="geometry">
       <rect>
@@ -316,7 +195,7 @@ background-color: rgb(152, 152, 152);
      </property>
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
+       <pointsize>11</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -332,6 +211,9 @@ background-color: rgb(152, 152, 152);
 border-radius: 15px;
 border-style: outset; 
 border-width: 2px; </string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_3">
@@ -345,7 +227,7 @@ border-width: 2px; </string>
      </property>
      <property name="font">
       <font>
-       <pointsize>13</pointsize>
+       <pointsize>11</pointsize>
        <weight>50</weight>
        <italic>false</italic>
        <bold>false</bold>
@@ -358,7 +240,7 @@ border-width: 2px; </string>
       <bool>true</bool>
      </property>
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;( )&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 255, 255);
@@ -367,7 +249,13 @@ border-style: outset;
 border-width: 2px; </string>
      </property>
      <property name="text">
-      <string>( )    </string>
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="placeholderText">
+      <string>                 (xx)xxxxx-xxxx</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_4">
@@ -381,7 +269,7 @@ border-width: 2px; </string>
      </property>
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
+       <pointsize>11</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -397,6 +285,12 @@ border-width: 2px; </string>
 border-radius: 15px;
 border-style: outset; 
 border-width: 2px; </string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="placeholderText">
+      <string>    gmail.com - hotmail.com - yahoo.com</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit">
@@ -410,8 +304,8 @@ border-width: 2px; </string>
      </property>
      <property name="font">
       <font>
-       <family>Arial Black</family>
-       <pointsize>12</pointsize>
+       <family>MS Sans Serif</family>
+       <pointsize>17</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -424,9 +318,15 @@ border-width: 2px; </string>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 15px;
+border-radius: 10px;
 border-style: outset; 
 border-width: 2px; </string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string> *****</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_9">
@@ -440,7 +340,7 @@ border-width: 2px; </string>
      </property>
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
+       <pointsize>11</pointsize>
        <weight>50</weight>
        <italic>false</italic>
        <bold>false</bold>
@@ -454,6 +354,12 @@ border-width: 2px; </string>
 border-radius: 15px;
 border-style: outset; 
 border-width: 2px; </string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="placeholderText">
+      <string>Ex: Rua Presidente lima vargas </string>
      </property>
     </widget>
     <widget class="QLabel" name="lb_telefone_3">
@@ -506,7 +412,6 @@ background-color: rgb(152, 152, 152);
        <weight>10</weight>
        <italic>false</italic>
        <bold>false</bold>
-       <kerning>false</kerning>
       </font>
      </property>
      <property name="mouseTracking">
@@ -520,81 +425,6 @@ background-color: rgb(152, 152, 152);</string>
      </property>
      <property name="text">
       <string>E-mail:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="lb_telefone_4">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>300</y>
-       <width>111</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial Black</family>
-       <pointsize>10</pointsize>
-       <weight>10</weight>
-       <italic>false</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="mouseTracking">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;
-color: rgb(0, 0, 0);
-background-color: rgb(152, 152, 152);
-</string>
-     </property>
-     <property name="text">
-      <string>Genero :</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="checkBox">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>330</y>
-       <width>115</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(152, 152, 152);</string>
-     </property>
-     <property name="text">
-      <string>Maculino</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="checkBox_2">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>350</y>
-       <width>115</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(152, 152, 152);</string>
-     </property>
-     <property name="text">
-      <string>Feminino</string>
      </property>
     </widget>
     <widget class="QLabel" name="label">
@@ -619,10 +449,10 @@ background-color: rgb(152, 152, 152);
      </property>
      <property name="geometry">
       <rect>
-       <x>9</x>
-       <y>12</y>
-       <width>676</width>
-       <height>369</height>
+       <x>4</x>
+       <y>8</y>
+       <width>695</width>
+       <height>375</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -634,6 +464,9 @@ background-color: rgb(152, 152, 152);
      <property name="font">
       <font/>
      </property>
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
      <property name="mouseTracking">
       <bool>false</bool>
      </property>
@@ -641,7 +474,7 @@ background-color: rgb(152, 152, 152);
       <string notr="true">background-color: rgb(152, 152, 152);
 border-radius: 20px;
 
-border-width: 4px; 
+border-width: 2px; 
 border-radius: 5px;
 border-style: outset; 
 border-color: rgb(0, 0, 0);</string>
@@ -668,24 +501,271 @@ border-color: rgb(0, 0, 0);</string>
        <string/>
       </property>
      </widget>
+     <widget class="QPushButton" name="bt_novo">
+      <property name="geometry">
+       <rect>
+        <x>342</x>
+        <y>24</y>
+        <width>249</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial Black</family>
+        <pointsize>12</pointsize>
+        <weight>10</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="toolTip">
+       <string notr="true"/>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background-color: rgb(106, 106, 106);
+color: rgb(255, 255, 255);
+font: 87 12pt &quot;Arial Black&quot;;
+border-width: 2px; 
+border-radius: 10px;
+border-style: outset; 
+border-color: rgb(0, 0, 0);
+}
+
+QPushButton:pressed{
+background-color: rgb(106, 106, 106);
+color: rgb(255, 255, 255);
+font: 87 10pt &quot;Arial Black&quot;;
+border-width: 4px; 
+border-radius: 10px;
+border-style: outset; 
+border-color: rgb(255, 255, 255);
+
+
+
+}
+ </string>
+      </property>
+      <property name="text">
+       <string>Adicionar novo Cliente </string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>imagens Projeto/novo 01.png</normaloff>imagens Projeto/novo 01.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_5">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>290</y>
+        <width>299</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 15px;
+border-style: outset; 
+border-width: 2px; </string>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Normal</enum>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="placeholderText">
+       <string>xxx.xxx.xxx-xx</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="bt_buscar">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>114</x>
+        <y>30</y>
+        <width>122</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial Black</family>
+        <pointsize>12</pointsize>
+        <weight>10</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="toolTip">
+       <string notr="true"/>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background-color: rgb(106, 106, 106);
+color: rgb(255, 255, 255);
+font: 87 12pt &quot;Arial Black&quot;;
+border-width: 2px; 
+border-radius: 10px;
+border-style: outset; 
+border-color: rgb(0, 0, 0);
+}
+
+QPushButton:pressed{
+background-color: rgb(106, 106, 106);
+color: rgb(255, 255, 255);
+font: 87 10pt &quot;Arial Black&quot;;
+border-width: 4px; 
+border-radius: 10px;
+border-style: outset; 
+border-color: rgb(255, 255, 255);
+
+
+
+}
+ </string>
+      </property>
+      <property name="text">
+       <string>Clientes</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>imagens Projeto/lupa.png</normaloff>imagens Projeto/lupa.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="bt_sair">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>300</y>
+        <width>115</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background-color: rgb(152, 152, 152);
+
+color: rgb(255, 255, 255);
+font: 87 12pt &quot;Arial Black&quot;;
+border-width: 0px; 
+border-radius: 0px;
+border-style: outset; 
+border-color: rgb(0, 0, 0);
+}
+
+QPushButton:pressed{
+background-color: rgb(106, 106, 106);
+color: rgb(255, 255, 255);
+font: 87 10pt &quot;Arial Black&quot;;
+border-width: 4px; 
+border-radius: 10px;
+border-style: outset; 
+border-color: rgb(255, 255, 255);
+
+
+
+}
+ </string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>imagens Projeto/logout.png</normaloff>imagens Projeto/logout.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>45</width>
+        <height>45</height>
+       </size>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="lb_telefone_5">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>278</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial Black</family>
+       <pointsize>10</pointsize>
+       <weight>10</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+background-color: rgb(152, 152, 152);
+</string>
+     </property>
+     <property name="text">
+      <string>CPF:</string>
+     </property>
     </widget>
     <zorder>frame_2</zorder>
     <zorder>label</zorder>
-    <zorder>bt_buscar</zorder>
-    <zorder>bt_novo</zorder>
     <zorder>lb_codigo</zorder>
     <zorder>tx_nome</zorder>
     <zorder>lb_telefone</zorder>
     <zorder>lineEdit_2</zorder>
-    <zorder>lineEdit_3</zorder>
     <zorder>lineEdit_4</zorder>
     <zorder>lineEdit</zorder>
     <zorder>lineEdit_9</zorder>
     <zorder>lb_telefone_3</zorder>
     <zorder>lb_telefone_2</zorder>
-    <zorder>lb_telefone_4</zorder>
-    <zorder>checkBox</zorder>
-    <zorder>checkBox_2</zorder>
+    <zorder>lb_telefone_5</zorder>
+    <zorder>lineEdit_3</zorder>
    </widget>
    <widget class="QFrame" name="frame">
     <property name="geometry">
@@ -714,7 +794,7 @@ border-color: rgb(0, 0, 0);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>692</width>
+     <width>700</width>
      <height>21</height>
     </rect>
    </property>
@@ -726,6 +806,16 @@ border-color: rgb(0, 0, 0);</string>
    <addaction name="menuGGGGG"/>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>bt_buscar</tabstop>
+  <tabstop>bt_novo</tabstop>
+  <tabstop>lineEdit_2</tabstop>
+  <tabstop>lineEdit_3</tabstop>
+  <tabstop>lineEdit_4</tabstop>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>lineEdit_9</tabstop>
+  <tabstop>lineEdit_5</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
