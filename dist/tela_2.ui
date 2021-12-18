@@ -9,27 +9,39 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>671</width>
-    <height>561</height>
+    <width>668</width>
+    <height>565</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>671</width>
-    <height>561</height>
+    <width>668</width>
+    <height>565</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>671</width>
-    <height>561</height>
+    <width>668</width>
+    <height>565</height>
+   </size>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>668</width>
+    <height>565</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>668</width>
+    <height>565</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(170, 170, 127);
+   <string notr="true">background-color: rgb(212, 212, 212);
 border-radius: 7px;
 border-style: outset;</string>
   </property>
@@ -37,28 +49,34 @@ border-style: outset;</string>
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>6</x>
-      <y>14</y>
-      <width>529</width>
-      <height>531</height>
+      <x>3</x>
+      <y>62</y>
+      <width>660</width>
+      <height>500</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>529</width>
-      <height>437</height>
+      <width>400</width>
+      <height>400</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>600</width>
-      <height>550</height>
+      <width>660</width>
+      <height>500</height>
+     </size>
+    </property>
+    <property name="sizeIncrement">
+     <size>
+      <width>500</width>
+      <height>500</height>
      </size>
     </property>
     <property name="font">
      <font>
       <family>Segoe UI Semibold</family>
-      <pointsize>10</pointsize>
+      <pointsize>11</pointsize>
       <weight>75</weight>
       <bold>true</bold>
       <kerning>true</kerning>
@@ -123,23 +141,6 @@ border-color: rgb(0, 0, 0);</string>
     </column>
     <column>
      <property name="text">
-      <string>E-mail</string>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial Black</family>
-       <pointsize>10</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>imagens Projeto/o-email.png</normaloff>imagens Projeto/o-email.png</iconset>
-     </property>
-    </column>
-    <column>
-     <property name="text">
       <string>Nome</string>
      </property>
      <property name="font">
@@ -174,6 +175,40 @@ border-color: rgb(0, 0, 0);</string>
     </column>
     <column>
      <property name="text">
+      <string>CPF</string>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial Black</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>imagens Projeto/perfil-pessoal.png</normaloff>imagens Projeto/perfil-pessoal.png</iconset>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>E-mail</string>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial Black</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>imagens Projeto/o-email.png</normaloff>imagens Projeto/o-email.png</iconset>
+     </property>
+    </column>
+    <column>
+     <property name="text">
       <string>Endereço</string>
      </property>
      <property name="font">
@@ -193,20 +228,23 @@ border-color: rgb(0, 0, 0);</string>
    <widget class="QPushButton" name="bt_alterar">
     <property name="geometry">
      <rect>
-      <x>552</x>
-      <y>44</y>
-      <width>114</width>
-      <height>61</height>
+      <x>551</x>
+      <y>9</y>
+      <width>103</width>
+      <height>44</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Arial Black</family>
-      <pointsize>10</pointsize>
+      <pointsize>12</pointsize>
       <weight>10</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="mouseTracking">
      <bool>false</bool>
@@ -215,8 +253,8 @@ border-color: rgb(0, 0, 0);</string>
      <string notr="true">QPushButton{
 background-color: rgb(106, 106, 106);
 color: rgb(255, 255, 255);
-font: 87 10pt &quot;Arial Black&quot;;
-border-width: 4px; 
+font: 87 12pt &quot;Arial Black&quot;;
+border-width: 2px; 
 border-radius: 10px;
 border-style: outset; 
 border-color: rgb(0, 0, 0);
@@ -229,7 +267,7 @@ font: 87 10pt &quot;Arial Black&quot;;
 border-width: 4px; 
 border-radius: 10px;
 border-style: outset; 
-border-color:rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);
 
 
 
@@ -253,20 +291,23 @@ border-color:rgb(255, 255, 255);
    <widget class="QPushButton" name="bt_apagar">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>110</y>
-      <width>115</width>
-      <height>61</height>
+      <x>441</x>
+      <y>9</y>
+      <width>105</width>
+      <height>46</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Arial Black</family>
-      <pointsize>10</pointsize>
+      <pointsize>12</pointsize>
       <weight>10</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="mouseTracking">
      <bool>false</bool>
@@ -275,8 +316,8 @@ border-color:rgb(255, 255, 255);
      <string notr="true">QPushButton{
 background-color: rgb(106, 106, 106);
 color: rgb(255, 255, 255);
-font: 87 10pt &quot;Arial Black&quot;;
-border-width: 4px; 
+font: 87 12pt &quot;Arial Black&quot;;
+border-width: 2px; 
 border-radius: 10px;
 border-style: outset; 
 border-color: rgb(0, 0, 0);
@@ -289,7 +330,7 @@ font: 87 10pt &quot;Arial Black&quot;;
 border-width: 4px; 
 border-radius: 10px;
 border-style: outset; 
-border-color:rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);
 
 
 
@@ -308,6 +349,96 @@ border-color:rgb(255, 255, 255);
       <width>30</width>
       <height>30</height>
      </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_apagar_2">
+    <property name="geometry">
+     <rect>
+      <x>8</x>
+      <y>10</y>
+      <width>107</width>
+      <height>47</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>10</pointsize>
+      <weight>10</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: rgb(106, 106, 106);
+color: rgb(255, 255, 255);
+font: 87 10pt &quot;Arial Black&quot;;
+border-width: 2px; 
+border-radius: 10px;
+border-style: outset; 
+border-color: rgb(0, 0, 0);
+}
+
+QPushButton:pressed{
+background-color: rgb(106, 106, 106);
+color: rgb(255, 255, 255);
+font: 87 10pt &quot;Arial Black&quot;;
+border-width: 4px; 
+border-radius: 10px;
+border-style: outset; 
+border-color: rgb(255, 255, 255);
+
+
+
+}
+ </string>
+    </property>
+    <property name="text">
+     <string>Pesquisar</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>imagens Projeto/lupa.png</normaloff>imagens Projeto/lupa.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>25</width>
+      <height>25</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>118</x>
+      <y>20</y>
+      <width>318</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 15px;
+border-style: outset; 
+border-width: 2px; </string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>Digite o nome do Cliente desejado: EX: João </string>
     </property>
    </widget>
   </widget>
