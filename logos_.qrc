@@ -1,0 +1,30 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>imagens Projeto/cadeado 01.png</file>
+    <file>imagens Projeto/cadeado.png</file>
+    <file>imagens Projeto/conecte-se.png</file>
+    <file>imagens Projeto/editar.png</file>
+    <file>imagens Projeto/endereco-residencial.png</file>
+    <file>imagens Projeto/limapr.png</file>
+    <file>imagens Projeto/lixeira  02.png</file>
+    <file>imagens Projeto/Lixeira.png</file>
+    <file>imagens Projeto/login (1).png</file>
+    <file>imagens Projeto/login (2).png</file>
+    <file>imagens Projeto/login (3).png</file>
+    <file>imagens Projeto/login.png</file>
+    <file>imagens Projeto/logout (1).png</file>
+    <file>imagens Projeto/logout.png</file>
+    <file>imagens Projeto/lupa.png</file>
+    <file>imagens Projeto/nome.png</file>
+    <file>imagens Projeto/novo 01.png</file>
+    <file>imagens Projeto/novo.png</file>
+    <file>imagens Projeto/o-email.png</file>
+    <file>imagens Projeto/perfil-pessoal.png</file>
+    <file>imagens Projeto/salve-.png</file>
+    <file>imagens Projeto/save 01.png</file>
+    <file>imagens Projeto/senha (1).png</file>
+    <file>imagens Projeto/senha (2).png</file>
+    <file>imagens Projeto/senha.png</file>
+    <file>imagens Projeto/telefone.png</file>
+  </qresource>
+</RCC>

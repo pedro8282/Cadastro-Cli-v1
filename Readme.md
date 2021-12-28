@@ -9,7 +9,8 @@
 - Cidade;
 - Email;
 - Código;
-- Função cadastrar usuario, Função buscar , delete e relatorio em PDF
+- CPF;
+- Função cadastrar usuario, buscar, altrar delete e relatorio em PDF
 
 -------------------------------------------------------------------------------
 

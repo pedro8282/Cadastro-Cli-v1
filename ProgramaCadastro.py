@@ -1,7 +1,11 @@
 import sqlite3
-from PyQt5 import uic, QtWidgets ## Solicita a abertura do QT designer
+from PyQt5 import QtCore, uic, QtWidgets ## Solicita a abertura do QT designer
+ 
 
-numer_cod = 0
+
+numer_cod = 0 ### Global
+
+
 
 def Banco_dados_clientes():
         
@@ -43,10 +47,10 @@ def Banco_dados_clientes():
 def Listar_dados():
 
         
-    tela3.show()
-    conexao = sqlite3.connect('Banco_cliente.db')
-    cursor = conexao.cursor()
-    cursor.execute("SELECT * FROM clientes")
+    tela3.show() ### Chama a tela 3
+    conexao = sqlite3.connect('Banco_cliente.db') ### Chama o banco de dados
+    cursor = conexao.cursor() ### Chama o banco de dados
+    cursor.execute("SELECT * FROM clientes") 
     dados_lidos = cursor.fetchall()
     tela3.tableWidget.setRowCount(len(dados_lidos))
     tela3.tableWidget.setColumnCount(6)
@@ -191,6 +195,35 @@ def Altera_dados_volta_tela_De_listaCli():
 def chamar_tela3():
     tela3.show()
 
+def leftMenu():
+    
+         
+     
+
+        ##############################################################################################
+        #Páginas do Sistema
+        tela2.btn_home.clicked.connect(lambda: tela2.setCurrentWidget(tela2.pg_home))
+        tela2.btn_menu_cadastrar.clicked.connect(lambda: tela2.setCurrentWidget(tela2.page_CADASTRA))
+        tela2.btn_menu_sobre.clicked.connect(lambda: tela2.setCurrentWidget(tela2.page_SOBRE))
+        tela2.btn_menu_contatos.clicked.connect(lambda:tela2.setCurrentWidget(tela2.pageCONTAATO))
+        ###############################################################################################
+
+
+        width = tela2.left_Menu.width()
+
+        if width == 9:
+            newWidth = 200
+        else:
+            newWidth = 9
+
+        tela2.animation = QtCore.QPropertyAnimation(tela2.left_Menu, b"maximumWidth")
+        tela2.animation.setDuration(300)
+        tela2.animation.setStartValue(width)
+        tela2.animation.setEndValue(newWidth)
+        tela2.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
+        tela2.animation.start()
+
+    
 
 app=QtWidgets.QApplication([])
 
@@ -205,9 +238,12 @@ tela1.bt_sairtela03.clicked.connect(Fecha_login_Programa)
 tela1.pushButton_2.clicked.connect(sai_tela_login_Abre_Tela_Cadastro_user)
 tela1.pushButton.clicked.connect(Validar_login)
 
-tela2.bt_buscar.clicked.connect(Listar_dados)
-tela2.bt_sair.clicked.connect(sai_da_tela_cadastro_clientes) 
-tela2.bt_novo.clicked.connect(Banco_dados_clientes) 
+tela2.bt_buscar_2.clicked.connect(Listar_dados)
+tela2.bt_sair_2.clicked.connect(sai_da_tela_cadastro_clientes) 
+tela2.bt_novo_2.clicked.connect(Banco_dados_clientes) 
+tela2.btn_toggle.clicked.connect(leftMenu)
+
+
 
 tela3.bt_alterar.clicked.connect(Editar_dados)
 tela3.bt_apagar.clicked.connect(Excluir_dados)
