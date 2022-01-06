@@ -1,23 +1,24 @@
 import sqlite3
+from sqlite3.dbapi2 import Cursor, Error
 from PyQt5 import QtCore, uic, QtWidgets ## Solicita a abertura do QT designer
- 
 
 
 numer_cod = 0 ### Global
 
 
-
 def Banco_dados_clientes():
+    
+     
         
     nome_cliente = tela2.lineEdit_2.text()
     telefone = tela2.lineEdit_3.text()
-    Cpf = tela2.lineEdit_5.text()
+    Cpf = tela2.lineEdit_6.text()
     Email = tela2.lineEdit_4.text()
     Cidade= tela2.lineEdit_9.text()
     
     
     try:
-            
+         
             conexao = sqlite3.connect('Banco_cliente.db')
             cursor = conexao.cursor(); print("Conectando Banco de dados...")
     
@@ -40,13 +41,62 @@ def Banco_dados_clientes():
             conexao.close()
 
     except sqlite3.Error as erro:
-        print("Erro ao inserir os dados", erro)
-        ### Função de click e butão
-        tela2.bt_novo.clicked.connect(Banco_dados_clientes)
+            print("Erro ao inserir os dados", erro)
+            ### Função de click e butão
 
-def Listar_dados():
+    limprar_apos_preencher ()
 
+def Banco_dados_produtos():
+
+    produtos = tela2.lineEdit_10.text()
+    quantidade = tela2.lineEdit_7.text()
+    valor = tela2.lineEdit_8.text()
+    
+    
+    try:
+         
+            conexao_produtos= sqlite3.connect('Banco_produtos.db')
+            cursor = conexao_produtos.cursor(); print("Conectando Banco de dados...")
+    
+            cursor.execute (""" 
+                    CREATE TABLE IF NOT EXISTS Produtoss (
+                    cod INTEGER PRIMARY KEY,
+                    produtos CHAR(40) NOT NULL,
+                    quantidade INTEGER(20),
+                    valor INTEGER(11)
+                            
+                );
+            """)
+            cursor.execute(""" INSERT INTO Produtoss(produtos, quantidade, valor)
+             VALUES(?, ?, ?)""", (produtos , quantidade, valor, ))
+
+            conexao_produtos.commit(); print("Banco de dados Criado.")
+            cursor.close()
+            conexao_produtos.close()
+
+    except sqlite3.Error as erro:
+            print("Erro ao inserir os dados", erro)
+            ### Função de click e butão
+            
+def Listar_produtos():
+    
+    conexao_produtos= sqlite3.connect('Banco_produtos.db')
+    cursor = conexao_produtos.cursor(); print("Conectando Banco de dados...")
+    cursor.execute("SELECT * FROM Produtoss") 
+    dados_lidoss = cursor.fetchall()
+    tela2.tableWidget_2.setRowCount(len(dados_lidoss))
+    tela2.tableWidget_2.setColumnCount(4)
+
+    for i in range(0, len(dados_lidoss)):
+            
+        for k in range(0,4):
+                
+            tela2.tableWidget_2.setItem(i,k,QtWidgets.QTableWidgetItem(str(dados_lidoss[i][k])))
         
+            conexao_produtos.close()   
+    
+def Listar_dados():
+            
     tela3.show() ### Chama a tela 3
     conexao = sqlite3.connect('Banco_cliente.db') ### Chama o banco de dados
     cursor = conexao.cursor() ### Chama o banco de dados
@@ -62,7 +112,7 @@ def Listar_dados():
             tela3.tableWidget.setItem(i,l,QtWidgets.QTableWidgetItem(str(dados_lidos[i][l])))
         
             conexao.close()       
-     
+    
 def Editar_dados():
     global numer_cod
     linha = tela3.tableWidget.currentRow()
@@ -83,7 +133,7 @@ def Editar_dados():
     tela5.linecpf.setText(str(cliente[0][3]))
     tela5.lineEmail.setText(str(cliente[0][4]))
     tela5.lineEndereco.setText(str(cliente[0][5]))
-
+ 
 def salvar_dados_editados():
     global numer_cod
     ### valores digitados no lineEdit
@@ -100,7 +150,19 @@ def salvar_dados_editados():
     tela5.close()
     tela3.close()
     Listar_dados()
-     
+
+def Excluir_produtos():
+    linha1 = tela2.tableWidget_2.currentRow()
+    tela2.tableWidget_2.removeRow(linha1) 
+    conexao_produtos= sqlite3.connect('Banco_produtos.db')
+    cursor = conexao_produtos.cursor()
+
+    cursor.execute("SELECT cod FROM Produtoss")
+    dados_lidos = cursor.fetchall()
+    valor_cod = dados_lidos[linha1][0]
+    cursor.execute("DELETE FROM Produtoss WHERE cod="+ str(valor_cod))
+    conexao_produtos.commit()
+
 def Excluir_dados():
     linha = tela3.tableWidget.currentRow()
     tela3.tableWidget.removeRow(linha) 
@@ -114,64 +176,56 @@ def Excluir_dados():
     conexao.commit()
    
 def cadastra_user():    
-
+    limprar_apos_preencher()
     nome = tela4.lineEdit_8.text()
-    nome_user = tela4.lineEdit_5.text()
+    login = tela4.lineEdit_5.text()
     senha = tela4.lineEdit_6.text()
-    C_senha = tela4.lineEdit_7.text()
+    c_senha = tela4.lineEdit_7.text()
 
-    if (senha == C_senha):
-            
+    if (senha == c_senha):
         try:
+            banco = sqlite3.connect('banco_cadastro.db') 
+            cursor = banco.cursor()
+            cursor.execute("CREATE TABLE IF NOT EXISTS cadastro (nome text,login text,senha text)")
+            cursor.execute("INSERT INTO cadastro VALUES ('"+nome+"','"+login+"','"+senha+"')")
 
-            user = sqlite3.connect("Banco_user.db")
-            cursor = user.cursor(); print("Conectando Banco de dados...")
-    
-            cursor.execute (""" 
-                        CREATE TABLE IF NOT EXISTS User (
-                        nome CHAR(40) NOT NULL,
-                        nome_user CHAR(40) NOT NULL,
-                        senha INTEGER(20) NOT NULL,
-                        C_senha INTEGER(11) NOT NULL
-                                            
-                    );
-                """)
-            cursor.execute(""" INSERT INTO User(nome, nome_user, senha, C_senha)
-                            VALUES(?, ?, ?, ?)""", (nome,nome_user, senha, C_senha))
-
-            user.commit(); print("Banco de dados Criado.")
-            cursor.close()
-            tela4.label_5.setText("Usuario Cadastrado com Sucesso")
+            banco.commit() 
+            banco.close()
+            tela4.label_5.setText("Usuario cadastrado com sucesso")
 
         except sqlite3.Error as erro:
-            print("Erro ao inserir os dados", erro)
-
-    
+            print("Erro ao inserir os dados: ",erro)
     else:
-        tela4.label_5.setText("As senha digitadas são divergentes.")
+        tela4.label_5.setText("As senhas digitadas estão diferentes")
     
 def Validar_login():
-    tela2.label.setText("")
-    usuario = tela1.lineEdit.text()
-    senha = tela1.lineEdit_2.text() 
-    user = sqlite3.connect("Banco_user.db")
-    cursor = user.cursor()
+    limprar_apos_preencher ()
+    tela1.label.setText("")
+    nome_usuario = tela1.lineEdit.text()
+    senha = tela1.lineEdit_2.text()
+    banco = sqlite3.connect('banco_cadastro.db')
+    cursor = banco.cursor()
     try:
 
-        cursor.execute("SELECT senha FROM User WHERE nome_user='{}'".format(usuario))
+        cursor.execute("SELECT senha FROM cadastro  WHERE login ='{}'".format(nome_usuario))
         senha_bd = cursor.fetchall()
         print(senha_bd[0][0])
-    except:
-        print("Erro ao inserir os dados")
-        tela_erro.show()
-    
-    
-    if usuario == "Pedro2021" and senha == "123456" :  ### Campor editavel 
+        banco.close()
+        banco.commit()
+        
+    except :
+           
+        print("Erro ao inserir os dados", )
+         
+             
+    if  senha == senha_bd[0][0]:  ### Campor editavel 
         tela1.close()
         tela2.show()
 
     else:
-        print("Dados incorreto")
+        tela1.label.setText("Senha incorreta")
+    limprar_apos_preencher ()
+    Listar_produtos()
               
 def Cadastrar_user_voltar_tela_login(): ### Sai da tela de cadastro de usuario e volta para o login 
         
@@ -183,6 +237,7 @@ def sai_da_tela_cadastro_clientes(): ### Sai da tela de caadastro de clientes e 
     tela1.show()
     
 def sai_tela_login_Abre_Tela_Cadastro_user(): ### sai da tela de login e abre a tela de cadastro de usuarios 
+    limprar_apos_preencher ()
     tela1.close()
     tela4.show()
     
@@ -196,34 +251,85 @@ def chamar_tela3():
     tela3.show()
 
 def leftMenu():
+
     
          
      
 
         ##############################################################################################
         #Páginas do Sistema
-        tela2.btn_home.clicked.connect(lambda: tela2.setCurrentWidget(tela2.pg_home))
-        tela2.btn_menu_cadastrar.clicked.connect(lambda: tela2.setCurrentWidget(tela2.page_CADASTRA))
-        tela2.btn_menu_sobre.clicked.connect(lambda: tela2.setCurrentWidget(tela2.page_SOBRE))
-        tela2.btn_menu_contatos.clicked.connect(lambda:tela2.setCurrentWidget(tela2.pageCONTAATO))
+        tela2.btn_home.clicked.connect(lambda: tela2.stackedWidget.setCurrentWidget(tela2.pg_home_2))
+        tela2.btn_menu_cadastrar.clicked.connect(lambda: tela2.stackedWidget.setCurrentWidget(tela2.page_CADASTRA_3))
+        tela2.btn_menu_sobre.clicked.connect(lambda: tela2.stackedWidget.setCurrentWidget(tela2.page_SOBRE_2))
+        tela2.btn_menu_contatos.clicked.connect(lambda:tela2.stackedWidget.setCurrentWidget(tela2.pageCONTAATO_2))
+        tela2.pushButton_2.clicked.connect(lambda:tela2.stackedWidget.setCurrentWidget(tela2.pageProdutos))
         ###############################################################################################
 
 
         width = tela2.left_Menu.width()
 
         if width == 9:
+
             newWidth = 200
         else:
             newWidth = 9
 
         tela2.animation = QtCore.QPropertyAnimation(tela2.left_Menu, b"maximumWidth")
-        tela2.animation.setDuration(300)
+        tela2.animation.setDuration(450)
         tela2.animation.setStartValue(width)
         tela2.animation.setEndValue(newWidth)
         tela2.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
         tela2.animation.start()
 
-    
+def seta_D():
+    width = tela2.left_Menu.width()
+
+    if width == 9:
+
+        newWidth = 200
+    else:
+        newWidth = 9
+
+        tela2.animation = QtCore.QPropertyAnimation(tela2.left_Menu, b"maximumWidth")
+        tela2.animation.setDuration(450)
+        tela2.animation.setStartValue(width)
+        tela2.animation.setEndValue(newWidth)
+        tela2.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
+        tela2.animation.start()
+
+def limprar_apos_preencher (): ### Limpa os dados da tela de cadastro 
+
+    ############################### Tela4
+    nome = ""
+    usuario = ""
+    senha_login = ""
+    confimacao_senha = ""
+
+    ###############################
+    user = ""
+    senha = ""
+    ############################### Tela1
+    Cod = ""
+    nome_cliente = ""
+    telefone = ""
+    Cpf = ""
+    Email = ""
+    Cidade= ""
+    ###############################
+    tela4.lineEdit_8.setText(nome)
+    tela4.lineEdit_5.setText(usuario)
+    tela4.lineEdit_6.setText(senha_login)
+    tela4.lineEdit_7.setText(confimacao_senha)
+    ###############################
+    tela1.lineEdit.setText(user)
+    tela1.lineEdit_2.setText(senha)
+    ###############################
+    tela2.lineEdit.setText(Cod)
+    tela2.lineEdit_2.setText(nome_cliente)
+    tela2.lineEdit_3.setText(telefone)
+    tela2.lineEdit_6.setText(Cpf)
+    tela2.lineEdit_4.setText(Email)
+    tela2.lineEdit_9.setText(Cidade)
 
 app=QtWidgets.QApplication([])
 
@@ -238,17 +344,18 @@ tela1.bt_sairtela03.clicked.connect(Fecha_login_Programa)
 tela1.pushButton_2.clicked.connect(sai_tela_login_Abre_Tela_Cadastro_user)
 tela1.pushButton.clicked.connect(Validar_login)
 
-tela2.bt_buscar_2.clicked.connect(Listar_dados)
+tela2.bt_buscar_2.clicked.connect(Listar_dados) 
+tela2.pushButton_3.clicked.connect(Listar_produtos)
 tela2.bt_sair_2.clicked.connect(sai_da_tela_cadastro_clientes) 
-tela2.bt_novo_2.clicked.connect(Banco_dados_clientes) 
+tela2.bt_novo_2.clicked.connect(Banco_dados_clientes)
+tela2.pushButton_3.clicked.connect(Banco_dados_produtos)
 tela2.btn_toggle.clicked.connect(leftMenu)
-
-
+tela2.pushButton.clicked.connect(seta_D)  
+tela2.bt_buscar_3.clicked.connect(limprar_apos_preencher)  
+tela2.pushButton_5.clicked.connect(Excluir_produtos)
 
 tela3.bt_alterar.clicked.connect(Editar_dados)
-tela3.bt_apagar.clicked.connect(Excluir_dados)
-
-
+tela3.bt_apagar.clicked.connect(Excluir_dados)  
 
 tela4.bt_sairtela03_3.clicked.connect(Cadastrar_user_voltar_tela_login)
 tela4.pushButton_6.clicked.connect(cadastra_user)

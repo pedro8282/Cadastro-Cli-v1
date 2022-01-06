@@ -1,10 +1,18 @@
 <RCC>
-  <qresource prefix="icons">
+  <qresource prefix="newPrefix">
+    <file>imagens Projeto/aceitar (1).png</file>
+    <file>imagens Projeto/aceitar.png</file>
+    <file>imagens Projeto/barra-de-menu (1).png</file>
+    <file>imagens Projeto/barra-de-menu.png</file>
     <file>imagens Projeto/cadeado 01.png</file>
     <file>imagens Projeto/cadeado.png</file>
+    <file>imagens Projeto/cardapio.png</file>
     <file>imagens Projeto/conecte-se.png</file>
+    <file>imagens Projeto/contato.png</file>
     <file>imagens Projeto/editar.png</file>
     <file>imagens Projeto/endereco-residencial.png</file>
+    <file>imagens Projeto/instagram.png</file>
+    <file>imagens Projeto/lar.png</file>
     <file>imagens Projeto/limapr.png</file>
     <file>imagens Projeto/lixeira  02.png</file>
     <file>imagens Projeto/Lixeira.png</file>
@@ -15,16 +23,24 @@
     <file>imagens Projeto/logout (1).png</file>
     <file>imagens Projeto/logout.png</file>
     <file>imagens Projeto/lupa.png</file>
+    <file>imagens Projeto/menu-suspenso.png</file>
     <file>imagens Projeto/nome.png</file>
     <file>imagens Projeto/novo 01.png</file>
     <file>imagens Projeto/novo.png</file>
     <file>imagens Projeto/o-email.png</file>
     <file>imagens Projeto/perfil-pessoal.png</file>
+    <file>imagens Projeto/pesquisa.png</file>
+    <file>imagens Projeto/registro (1).png</file>
+    <file>imagens Projeto/registro (2).png</file>
+    <file>imagens Projeto/registro.png</file>
     <file>imagens Projeto/salve-.png</file>
     <file>imagens Projeto/save 01.png</file>
     <file>imagens Projeto/senha (1).png</file>
     <file>imagens Projeto/senha (2).png</file>
     <file>imagens Projeto/senha.png</file>
+    <file>imagens Projeto/sobre.png</file>
+    <file>imagens Projeto/telefone (1).png</file>
     <file>imagens Projeto/telefone.png</file>
+    <file>imagens Projeto/Whatsapp.png</file>
   </qresource>
 </RCC>
