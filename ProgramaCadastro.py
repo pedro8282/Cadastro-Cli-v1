@@ -1,6 +1,9 @@
+from msilib.schema import Class
+from operator import le
 import sqlite3
 from sqlite3.dbapi2 import Cursor, Error
-from PyQt5 import QtCore, uic, QtWidgets ## Solicita a abertura do QT designer
+from PyQt5 import QtCore, uic, QtWidgets
+from importlib_metadata import re    
 
 
 numer_cod = 0 ### Global
@@ -8,8 +11,7 @@ numer_cod = 0 ### Global
 
 def Banco_dados_clientes():
     
-     
-        
+             
     nome_cliente = tela2.lineEdit_2.text()
     telefone = tela2.lineEdit_3.text()
     Cpf = tela2.lineEdit_6.text()
@@ -19,7 +21,7 @@ def Banco_dados_clientes():
     
     try:
          
-            conexao = sqlite3.connect('Banco_cliente.db')
+            conexao = sqlite3.connect('Banco_cliente.db') 
             cursor = conexao.cursor(); print("Conectando Banco de dados...")
     
             cursor.execute (""" 
@@ -33,8 +35,8 @@ def Banco_dados_clientes():
                             
                 );
             """)
-            cursor.execute(""" INSERT INTO clientes(nome_cliente, telefone, Cpf, Email, Cidade)
-             VALUES(?, ?, ?, ?, ?)""", (nome_cliente, telefone , Cpf, Email, Cidade, ))
+            cursor.execute(""" INSERT INTO clientes(nome_cliente, telefone, Cpf, Email, Cidade) 
+             VALUES(?, ?, ?, ?, ?)""", (nome_cliente, telefone , Cpf, Email, Cidade, )) 
 
             conexao.commit(); print("Banco de dados Criado.")
             cursor.close()
@@ -50,8 +52,10 @@ def Banco_dados_produtos():
 
     produtos = tela2.lineEdit_10.text()
     quantidade = tela2.lineEdit_7.text()
+
     valor = tela2.lineEdit_8.text()
-    
+
+    limprar_apos_preencher ()
     
     try:
          
@@ -76,8 +80,24 @@ def Banco_dados_produtos():
 
     except sqlite3.Error as erro:
             print("Erro ao inserir os dados", erro)
-            ### Função de click e butão
+   
+def Lista_de_produtos_tela_geral():
+    
+    conexao_produtos= sqlite3.connect('Banco_produtos.db')
+    cursor = conexao_produtos.cursor(); print("Conectando Banco de dados...")
+    cursor.execute("SELECT * FROM Produtoss") 
+    dados_lidoss = cursor.fetchall()
+    tela2.tableWidget.setRowCount(len(dados_lidoss))
+    tela2.tableWidget.setColumnCount(4)
+
+    for i in range(0, len(dados_lidoss)):
             
+        for k in range(0,4):
+                
+            tela2.tableWidget.setItem(i,k,QtWidgets.QTableWidgetItem(str(dados_lidoss[i][k])))
+        
+            conexao_produtos.close()   
+
 def Listar_produtos():
     
     conexao_produtos= sqlite3.connect('Banco_produtos.db')
@@ -133,7 +153,49 @@ def Editar_dados():
     tela5.linecpf.setText(str(cliente[0][3]))
     tela5.lineEmail.setText(str(cliente[0][4]))
     tela5.lineEndereco.setText(str(cliente[0][5]))
- 
+
+def editar_produtos():
+
+    global numer_cod
+    linha = tela2.tableWidget_2.currentRow()
+    conexao_produtos= sqlite3.connect('Banco_produtos.db')
+    cursor = conexao_produtos.cursor()
+
+    cursor.execute("SELECT cod FROM Produtoss")
+    dados_lidos= cursor.fetchall()
+    valor_cod = dados_lidos[linha][0]
+    cursor.execute("SELECT * FROM Produtoss WHERE cod="+ str(valor_cod))
+    cliente = cursor.fetchall()
+    
+    
+    numer_cod = valor_cod
+
+    tela2.lineEdit_10.setText(str(cliente[0][1]))
+    tela2.lineEdit_7.setText(str(cliente[0][2]))
+    tela2.lineEdit_8.setText(str(cliente[0][3]))
+    
+def salvar_produtos_editados():
+    
+    global numer_cod
+
+    ### valores digitados no lineEdit
+
+    produtos = tela2.lineEdit_10.text()
+    quantidade = tela2.lineEdit_7.text()
+    valor = tela2.lineEdit_8.text()
+    
+
+    ### Atualizar os dados do banco
+
+    conexao_produtos= sqlite3.connect('Banco_produtos.db')
+    cursor = conexao_produtos.cursor(); print("Conectando Banco de dados...")
+    cursor.execute("UPDATE Produtoss SET produtos = '{}', quantidade  = '{}', valor  = '{}' WHERE cod = {}".format(produtos,quantidade,valor,numer_cod))
+    conexao_produtos.commit()
+
+    Lista_de_produtos_tela_geral()
+    Listar_produtos()
+    limprar_apos_preencher ()
+    
 def salvar_dados_editados():
     global numer_cod
     ### valores digitados no lineEdit
@@ -150,7 +212,7 @@ def salvar_dados_editados():
     tela5.close()
     tela3.close()
     Listar_dados()
-
+    
 def Excluir_produtos():
     linha1 = tela2.tableWidget_2.currentRow()
     tela2.tableWidget_2.removeRow(linha1) 
@@ -161,6 +223,19 @@ def Excluir_produtos():
     dados_lidos = cursor.fetchall()
     valor_cod = dados_lidos[linha1][0]
     cursor.execute("DELETE FROM Produtoss WHERE cod="+ str(valor_cod))
+    conexao_produtos.commit()
+
+def Excluir_produtos_home():
+    linha2 = tela2.tableWidget.currentRow()
+
+    tela2.tableWidget.removeRow(linha2)
+    conexao_produtos= sqlite3.connect('Banco_produtos.db')
+    cursor = conexao_produtos.cursor()
+
+    cursor.execute("SELECT cod FROM Produtoss")
+    dados_lidoss = cursor.fetchall()
+    valor_codd =  dados_lidoss[linha2][0]
+    cursor.execute("DELETE FROM Produtoss WHERE cod="+ str(valor_codd))
     conexao_produtos.commit()
 
 def Excluir_dados():
@@ -176,10 +251,11 @@ def Excluir_dados():
     conexao.commit()
    
 def cadastra_user():    
-    limprar_apos_preencher()
+     
     nome = tela4.lineEdit_8.text()
     login = tela4.lineEdit_5.text()
     senha = tela4.lineEdit_6.text()
+    
     c_senha = tela4.lineEdit_7.text()
 
     if (senha == c_senha):
@@ -197,9 +273,9 @@ def cadastra_user():
             print("Erro ao inserir os dados: ",erro)
     else:
         tela4.label_5.setText("As senhas digitadas estão diferentes")
-    
+            
 def Validar_login():
-    limprar_apos_preencher ()
+    
     tela1.label.setText("")
     nome_usuario = tela1.lineEdit.text()
     senha = tela1.lineEdit_2.text()
@@ -217,21 +293,39 @@ def Validar_login():
            
         print("Erro ao inserir os dados", )
          
-             
-    if  senha == senha_bd[0][0]:  ### Campor editavel 
+    
+    if senha == senha_bd[0][0]:  ### Campor editavel 
         tela1.close()
         tela2.show()
 
     else:
         tela1.label.setText("Senha incorreta")
+
     limprar_apos_preencher ()
+    Lista_de_produtos_tela_geral()
     Listar_produtos()
-              
+
+def Validar_login_super():
+
+    tela7.label.setText("")
+    nome_usuario = tela7.lineEdit.text()
+    senha = tela7.lineEdit_2.text()
+    banco = sqlite3.connect('banco_cadastro.db')
+    cursor = banco.cursor()
+    cursor.close()
+    
+    if nome_usuario == "Pedro2021" and senha == "123456" :     ### Campor editavel 
+        tela7.close()
+        tela2.show() #######################
+
+    else:
+        tela7.label.setText("Dados incorretos!")
+
 def Cadastrar_user_voltar_tela_login(): ### Sai da tela de cadastro de usuario e volta para o login 
         
     tela4.close()
     tela1.show()
-
+ 
 def sai_da_tela_cadastro_clientes(): ### Sai da tela de caadastro de clientes e volta para login
     tela2.close() 
     tela1.show()
@@ -250,10 +344,21 @@ def Altera_dados_volta_tela_De_listaCli():
 def chamar_tela3():
     tela3.show()
 
-def leftMenu():
+def Chama_tela7():
+    tela1.close()
+    tela7.show()
+    limprar_apos_preencher ()
 
-    
-         
+def sai_tela7_volta_tela1():
+    tela7.close()
+    tela1.show()
+    limprar_apos_preencher ()
+
+def fecha_tela_Lista_cliente():
+    tela3.close()
+
+def leftMenu():
+            
      
 
         ##############################################################################################
@@ -275,7 +380,7 @@ def leftMenu():
             newWidth = 9
 
         tela2.animation = QtCore.QPropertyAnimation(tela2.left_Menu, b"maximumWidth")
-        tela2.animation.setDuration(450)
+        tela2.animation.setDuration(800)
         tela2.animation.setStartValue(width)
         tela2.animation.setEndValue(newWidth)
         tela2.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
@@ -291,7 +396,7 @@ def seta_D():
         newWidth = 9
 
         tela2.animation = QtCore.QPropertyAnimation(tela2.left_Menu, b"maximumWidth")
-        tela2.animation.setDuration(450)
+        tela2.animation.setDuration(800)
         tela2.animation.setStartValue(width)
         tela2.animation.setEndValue(newWidth)
         tela2.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
@@ -299,16 +404,25 @@ def seta_D():
 
 def limprar_apos_preencher (): ### Limpa os dados da tela de cadastro 
 
+    usuario_super = ""
+    senha_super = ""
+    ###############################
+    produtoo = ""
+    quantidade = ""
+    valor = ""
+    ###############################
+     
     ############################### Tela4
     nome = ""
     usuario = ""
     senha_login = ""
     confimacao_senha = ""
 
-    ###############################
+    ###############################tela1
     user = ""
     senha = ""
-    ############################### Tela1
+    ############################### Tela2                     
+     
     Cod = ""
     nome_cliente = ""
     telefone = ""
@@ -316,6 +430,8 @@ def limprar_apos_preencher (): ### Limpa os dados da tela de cadastro
     Email = ""
     Cidade= ""
     ###############################
+    
+    ##############################
     tela4.lineEdit_8.setText(nome)
     tela4.lineEdit_5.setText(usuario)
     tela4.lineEdit_6.setText(senha_login)
@@ -324,12 +440,19 @@ def limprar_apos_preencher (): ### Limpa os dados da tela de cadastro
     tela1.lineEdit.setText(user)
     tela1.lineEdit_2.setText(senha)
     ###############################
+    tela7.lineEdit.setText(usuario_super)
+    tela7.lineEdit_2.setText(senha_super)
+    ##############################
     tela2.lineEdit.setText(Cod)
     tela2.lineEdit_2.setText(nome_cliente)
     tela2.lineEdit_3.setText(telefone)
     tela2.lineEdit_6.setText(Cpf)
     tela2.lineEdit_4.setText(Email)
     tela2.lineEdit_9.setText(Cidade)
+    ################################
+    tela2.lineEdit_10.setText(produtoo)
+    tela2.lineEdit_7.setText(quantidade)
+    tela2.lineEdit_8.setText(valor)
 
 app=QtWidgets.QApplication([])
 
@@ -338,14 +461,18 @@ tela2=uic.loadUi("tela2.ui")### Chama a tela da aplicação feita no QTDsigner
 tela3=uic.loadUi("tela3.ui")### Chama a tela da aplicação feita no QTDsigner
 tela4=uic.loadUi("tela4.ui")### Chama a tela da aplicação feita no QTDsigner
 tela5=uic.loadUi("tela5.ui")### Chama a tela da aplicação feita no QTDsigner
+tela7=uic.loadUi("tela7.ui")### Chama a tela da aplicação feita no QTDsigner
 tela_erro=uic.loadUi("tela_erro.ui")### Chama a tela da aplicação feita no QTDsigner
  
 tela1.bt_sairtela03.clicked.connect(Fecha_login_Programa)
 tela1.pushButton_2.clicked.connect(sai_tela_login_Abre_Tela_Cadastro_user)
-tela1.pushButton.clicked.connect(Validar_login)
+tela1.pushButton.clicked.connect(Validar_login)  
+tela1.pushButton_3.clicked.connect(Chama_tela7)
 
 tela2.bt_buscar_2.clicked.connect(Listar_dados) 
+"""tela2.pushButton_14.clicked.connect(Pesquisar)"""
 tela2.pushButton_3.clicked.connect(Listar_produtos)
+tela2.pushButton_3.clicked.connect(Lista_de_produtos_tela_geral)
 tela2.bt_sair_2.clicked.connect(sai_da_tela_cadastro_clientes) 
 tela2.bt_novo_2.clicked.connect(Banco_dados_clientes)
 tela2.pushButton_3.clicked.connect(Banco_dados_produtos)
@@ -353,18 +480,22 @@ tela2.btn_toggle.clicked.connect(leftMenu)
 tela2.pushButton.clicked.connect(seta_D)  
 tela2.bt_buscar_3.clicked.connect(limprar_apos_preencher)  
 tela2.pushButton_5.clicked.connect(Excluir_produtos)
+tela2.pushButton_5.clicked.connect(Excluir_produtos_home)
+tela2.pushButton_4.clicked.connect(editar_produtos)
+tela2.pushButton_6.clicked.connect(salvar_produtos_editados)
 
 tela3.bt_alterar.clicked.connect(Editar_dados)
-tela3.bt_apagar.clicked.connect(Excluir_dados)  
+tela3.bt_apagar.clicked.connect(Excluir_dados)
+tela3.bt_alterar_2.clicked.connect(fecha_tela_Lista_cliente)  
 
 tela4.bt_sairtela03_3.clicked.connect(Cadastrar_user_voltar_tela_login)
 tela4.pushButton_6.clicked.connect(cadastra_user)
 
 tela5.bt_salvar.clicked.connect(salvar_dados_editados)
 
-
+tela7.pushButton_2.clicked.connect(sai_tela7_volta_tela1)
+tela7.pushButton.clicked.connect(Validar_login_super)
  
-
 
 tela1.show()
 app.exec()

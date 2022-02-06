@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="newPrefix">
+    <file>imagens Projeto/lupa.png</file>
     <file>imagens Projeto/aceitar (1).png</file>
     <file>imagens Projeto/aceitar.png</file>
     <file>imagens Projeto/barra-de-menu (1).png</file>

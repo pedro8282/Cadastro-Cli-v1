@@ -56,7 +56,13 @@
    <double>1.000000000000000</double>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(188, 188, 93);</string>
+   <string notr="true">background-color: rgb(227, 227, 227);
+border-radius: 20px;
+
+border-width: 2px; 
+border-radius: 5px;
+border-style: outset; 
+border-color: rgb(0, 0, 0);</string>
   </property>
   <property name="iconSize">
    <size>
@@ -65,59 +71,54 @@
    </size>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QFrame" name="frame">
+   <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>-96</x>
-      <y>-23</y>
-      <width>457</width>
-      <height>451</height>
+      <x>90</x>
+      <y>140</y>
+      <width>206</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>Usuário</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_buscar_4">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>121</x>
+      <y>7</y>
+      <width>112</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>12</pointsize>
+      <weight>10</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="toolTip">
+     <string notr="true"/>
+    </property>
+    <property name="styleSheet">
      <string notr="true">background-color: rgb(227, 227, 227);
-border-radius: 20px;
-
-border-width: 2px; 
-border-radius: 5px;
-border-style: outset; 
-border-color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QPushButton" name="bt_buscar_2">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>178</y>
-       <width>67</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial Black</family>
-       <pointsize>12</pointsize>
-       <weight>10</weight>
-       <italic>false</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="mouseTracking">
-      <bool>false</bool>
-     </property>
-     <property name="toolTip">
-      <string notr="true"/>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(227, 227, 227);
 
 color: rgb(255, 255, 255);
 font: 87 12pt &quot;Arial Black&quot;;
@@ -126,91 +127,50 @@ border-radius: 10px;
 border-style: outset; 
 border-color: rgb(0, 0, 0);
 </string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>imagens Projeto/login (3).png</normaloff>imagens Projeto/login (3).png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>50</width>
-       <height>50</height>
-      </size>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>200</y>
-       <width>206</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-     <property name="placeholderText">
-      <string>Usuário</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>277</y>
-       <width>206</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="echoMode">
-      <enum>QLineEdit::Password</enum>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-     <property name="placeholderText">
-      <string>Senha</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="bt_buscar_3">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>253</y>
-       <width>67</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial Black</family>
-       <pointsize>12</pointsize>
-       <weight>10</weight>
-       <italic>false</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="mouseTracking">
-      <bool>false</bool>
-     </property>
-     <property name="toolTip">
-      <string notr="true"/>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>imagens Projeto/senha (2).png</normaloff>imagens Projeto/senha (2).png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_buscar_3">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>13</x>
+      <y>193</y>
+      <width>67</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>12</pointsize>
+      <weight>10</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="toolTip">
+     <string notr="true"/>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
 background-color: rgb(227, 227, 227);
 
 color: rgb(255, 255, 255);
@@ -220,152 +180,44 @@ border-radius: 10px;
 border-style: outset; 
 border-color: rgb(0, 0, 0);
 </string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>imagens Projeto/senha (1).png</normaloff>imagens Projeto/senha (1).png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>50</width>
-       <height>50</height>
-      </size>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="bt_buscar_4">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="geometry">
-      <rect>
-       <x>225</x>
-       <y>55</y>
-       <width>115</width>
-       <height>121</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial Black</family>
-       <pointsize>12</pointsize>
-       <weight>10</weight>
-       <italic>false</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="mouseTracking">
-      <bool>false</bool>
-     </property>
-     <property name="toolTip">
-      <string notr="true"/>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(227, 227, 227);
-
-color: rgb(255, 255, 255);
-font: 87 12pt &quot;Arial Black&quot;;
-border-width: 0px; 
-border-radius: 10px;
-border-style: outset; 
-border-color: rgb(0, 0, 0);
-</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>imagens Projeto/senha (2).png</normaloff>imagens Projeto/senha (2).png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>100</width>
-       <height>100</height>
-      </size>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>182</x>
-       <y>341</y>
-       <width>91</width>
-       <height>39</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial Black</family>
-       <pointsize>10</pointsize>
-       <weight>50</weight>
-       <italic>false</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="cursor">
-      <cursorShape>PointingHandCursor</cursorShape>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{
-color: rgb(255, 255, 255);
-border-width: 2px; 
-border-radius: 10px;
-	background-color: rgb(0, 217, 105);
-border-style: outset; 
-border-color: rgb(0, 0, 0);
-}
-
-QPushButton:pressed{
-background-color: rgb(114, 170, 84);
-font: 87 10pt &quot;Arial Black&quot;;
-border-width: 2px; 
-border-radius: 10px;
-border-style: outset; 
-border-color: rgb(234, 234, 234);
-
-}
- </string>
-     </property>
-     <property name="text">
-      <string>LOGIN</string>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>imagens Projeto/nome.png</normaloff>imagens Projeto/nome.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>25</width>
-       <height>25</height>
-      </size>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="bt_sairtela03">
-     <property name="geometry">
-      <rect>
-       <x>310</x>
-       <y>341</y>
-       <width>76</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial Black</family>
-       <pointsize>10</pointsize>
-       <weight>10</weight>
-       <italic>false</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="cursor">
-      <cursorShape>PointingHandCursor</cursorShape>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>imagens Projeto/senha (1).png</normaloff>imagens Projeto/senha (1).png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_sairtela03">
+    <property name="geometry">
+     <rect>
+      <x>219</x>
+      <y>283</y>
+      <width>76</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>10</pointsize>
+      <weight>10</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
 	background-color: rgb(208, 0, 0);
 font: 87 10pt &quot;Arial Black&quot;;
@@ -388,50 +240,75 @@ border-color: rgb(255, 255, 255);
 
 }
  </string>
-     </property>
-     <property name="text">
-      <string>SAIR</string>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>imagens Projeto/logout.png</normaloff>imagens Projeto/logout.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>25</width>
-       <height>25</height>
-      </size>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_2">
-     <property name="geometry">
-      <rect>
-       <x>357</x>
-       <y>412</y>
-       <width>96</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{
-background-color: rgb(54, 54, 162);
-color: rgb(255, 255, 255);
+    </property>
+    <property name="text">
+     <string>SAIR</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>imagens Projeto/logout.png</normaloff>imagens Projeto/logout.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>25</width>
+      <height>25</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>217</y>
+      <width>206</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>Senha</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>246</x>
+      <y>387</y>
+      <width>96</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: rgb(227, 227, 227);
+color: rgb(0, 12, 194);
 
-border-width: 2px; 
+border-width: 0px; 
 border-radius: 5px;
 border-style: outset; 
 border-color: rgb(0, 0, 0);
 }
 
 QPushButton:pressed{
-background-color: rgb(54, 54, 162);
-color: rgb(255, 255, 255);
-border-width: 4px; 
+background-color: rgb(227, 227, 227);
+color: rgb(0, 12, 194);
+border-width: 0px; 
 border-radius: 5px;
 border-style: outset; 
 border-color: rgb(255, 255, 255);
@@ -440,30 +317,210 @@ border-color: rgb(255, 255, 255);
 
 }
  </string>
-     </property>
-     <property name="text">
-      <string>Cadastre-se!</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>236</x>
-       <y>315</y>
-       <width>100</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-width: 0px; 
+    </property>
+    <property name="text">
+     <string>Cadastre-se!</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_buscar_2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>13</x>
+      <y>118</y>
+      <width>67</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>12</pointsize>
+      <weight>10</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="toolTip">
+     <string notr="true"/>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(227, 227, 227);
+
+color: rgb(255, 255, 255);
+font: 87 12pt &quot;Arial Black&quot;;
+border-width: 0px; 
+border-radius: 10px;
+border-style: outset; 
+border-color: rgb(0, 0, 0);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>imagens Projeto/login (3).png</normaloff>imagens Projeto/login (3).png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>93</x>
+      <y>285</y>
+      <width>91</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+border-width: 2px; 
+border-radius: 10px;
+	background-color: rgb(0, 217, 105);
+border-style: outset; 
+border-color: rgb(0, 0, 0);
+}
+
+QPushButton:pressed{
+background-color: rgb(114, 170, 84);
+font: 87 10pt &quot;Arial Black&quot;;
+border-width: 2px; 
+border-radius: 10px;
+border-style: outset; 
+border-color: rgb(234, 234, 234);
+
+}
+ </string>
+    </property>
+    <property name="text">
+     <string>LOGIN</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>imagens Projeto/nome.png</normaloff>imagens Projeto/nome.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>25</width>
+      <height>25</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>145</x>
+      <y>394</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+border-width: 0px; 
+border-radius: 0px;
+
+border-style: outset; 
+border-color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>Não tem Cadastro ?</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>143</x>
+      <y>255</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 0px; 
+color: rgb(255, 0, 4);
 border-radius: 0px;
 border-style: outset; 
 </string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>392</y>
+      <width>68</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Narrow</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: rgb(227, 227, 227);
+	color: rgb(0, 0, 0);
+
+border-width: 0px; 
+border-radius: 5px;
+border-style: outset; 
+border-color: rgb(0, 0, 0);
+}
+
+QPushButton:pressed{
+background-color: rgb(227, 227, 227);
+color: rgb(0, 12, 194);
+border-width: 0px; 
+border-radius: 5px;
+border-style: outset; 
+border-color: rgb(255, 255, 255);
+
+
+
+}
+ </string>
+    </property>
+    <property name="text">
+     <string>Suporte QtCli</string>
+    </property>
    </widget>
   </widget>
  </widget>

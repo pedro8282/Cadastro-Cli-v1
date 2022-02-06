@@ -35,10 +35,10 @@
    <widget class="QFrame" name="frame_2">
     <property name="geometry">
      <rect>
-      <x>-87</x>
-      <y>-20</y>
-      <width>457</width>
-      <height>451</height>
+      <x>0</x>
+      <y>2</y>
+      <width>357</width>
+      <height>421</height>
      </rect>
     </property>
     <property name="font">
@@ -64,8 +64,8 @@ border-color: rgb(0, 0, 0);</string>
     <widget class="QLineEdit" name="lineEdit_5">
      <property name="geometry">
       <rect>
-       <x>151</x>
-       <y>160</y>
+       <x>81</x>
+       <y>122</y>
        <width>206</width>
        <height>31</height>
       </rect>
@@ -86,8 +86,8 @@ border-color: rgb(0, 0, 0);</string>
     <widget class="QLineEdit" name="lineEdit_6">
      <property name="geometry">
       <rect>
-       <x>151</x>
-       <y>226</y>
+       <x>81</x>
+       <y>188</y>
        <width>203</width>
        <height>31</height>
       </rect>
@@ -105,43 +105,23 @@ border-color: rgb(0, 0, 0);</string>
       <string>Digite sua Senha EX: 2054@#25P</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>219</x>
-       <y>316</y>
-       <width>133</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;
-color: rgb(0, 0, 0);
-border-width: 0px; 
-border-radius: 0px;
-border-style: outset; 
-border-color: rgb(0, 0, 0);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QPushButton" name="bt_sairtela03_3">
      <property name="geometry">
       <rect>
-       <x>349</x>
-       <y>408</y>
-       <width>88</width>
-       <height>29</height>
+       <x>261</x>
+       <y>380</y>
+       <width>86</width>
+       <height>32</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>Arial Black</family>
-       <pointsize>10</pointsize>
-       <weight>10</weight>
+       <family>MS Shell Dlg 2</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
        <italic>false</italic>
        <bold>false</bold>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="cursor">
@@ -150,30 +130,25 @@ border-color: rgb(0, 0, 0);</string>
      <property name="styleSheet">
       <string notr="true">QPushButton{
 background-color: rgb(227, 227, 227);
-color: rgb(0, 0, 0);
-font: 87 10pt &quot;Arial Black&quot;;
-border-width: 1px; 
-border-radius: 10px;
+	color: rgb(51, 0, 255);
+
+border-width: 0px; 
+border-radius: 5px;
 border-style: outset; 
 border-color: rgb(0, 0, 0);
 }
 
 QPushButton:pressed{
 background-color: rgb(227, 227, 227);
-color: rgb(0, 0, 0);
-font: 87 10pt &quot;Arial Black&quot;;
-border-width: 1px; 
-border-radius: 10px;
+color: rgb(0, 12, 194);
+border-width: 0px; 
+border-radius: 5px;
 border-style: outset; 
 border-color: rgb(255, 255, 255);
 
 
 
-;;}
-
-QPushButton:hover{background-color: rgb(168, 168, 168); color:black}
- 
-
+}
  </string>
      </property>
      <property name="text">
@@ -193,10 +168,10 @@ QPushButton:hover{background-color: rgb(168, 168, 168); color:black}
     <widget class="QPushButton" name="pushButton_6">
      <property name="geometry">
       <rect>
-       <x>159</x>
-       <y>358</y>
-       <width>195</width>
-       <height>25</height>
+       <x>81</x>
+       <y>320</y>
+       <width>205</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="font">
@@ -204,11 +179,14 @@ QPushButton:hover{background-color: rgb(168, 168, 168); color:black}
        <pointsize>12</pointsize>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
 color: rgb(0, 0, 0);
 border-width: 2px; 
-border-radius: 10px;
+border-radius: 8px;
 background-color: rgb(0, 217, 105);
 border-style: outset; 
 border-color: rgb(0, 0, 0);
@@ -232,8 +210,8 @@ border-color: rgb(234, 234, 234);
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>149</x>
-       <y>141</y>
+       <x>81</x>
+       <y>101</y>
        <width>113</width>
        <height>16</height>
       </rect>
@@ -257,8 +235,8 @@ border-color: rgb(0, 0, 0);</string>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>151</x>
-       <y>208</y>
+       <x>81</x>
+       <y>168</y>
        <width>106</width>
        <height>16</height>
       </rect>
@@ -282,8 +260,8 @@ border-color: rgb(0, 0, 0);</string>
     <widget class="QLineEdit" name="lineEdit_7">
      <property name="geometry">
       <rect>
-       <x>151</x>
-       <y>292</y>
+       <x>81</x>
+       <y>254</y>
        <width>206</width>
        <height>31</height>
       </rect>
@@ -304,8 +282,8 @@ border-color: rgb(0, 0, 0);</string>
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>151</x>
-       <y>272</y>
+       <x>81</x>
+       <y>234</y>
        <width>115</width>
        <height>16</height>
       </rect>
@@ -329,8 +307,8 @@ border-color: rgb(0, 0, 0);</string>
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>331</y>
+       <x>91</x>
+       <y>293</y>
        <width>190</width>
        <height>16</height>
       </rect>
@@ -346,7 +324,7 @@ border-color: rgb(0, 0, 0);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">
-color: rgb(0, 0, 0);
+color: rgb(234, 0, 3);
 border-width: 0px; 
 border-radius: 0px;
 border-style: outset; 
@@ -359,8 +337,8 @@ border-color: rgb(0, 0, 0);</string>
     <widget class="QLineEdit" name="lineEdit_8">
      <property name="geometry">
       <rect>
-       <x>151</x>
-       <y>97</y>
+       <x>81</x>
+       <y>59</y>
        <width>206</width>
        <height>31</height>
       </rect>
@@ -381,8 +359,8 @@ border-color: rgb(0, 0, 0);</string>
     <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>151</x>
-       <y>70</y>
+       <x>81</x>
+       <y>32</y>
        <width>113</width>
        <height>16</height>
       </rect>
